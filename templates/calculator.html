@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}",
+    
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h1>Calculator</h1>
+        </center>
+        <center>
+            <form action="equal" method="POST">
+                {% csrf_token %}
+                <label>First no</label>
+                <input type="text" id="num1" name="num1">
+                <label>Second no</label>
+                <input type="text" id="num2" name="num2">
+                <select name="oper">
+                    <option value="+">ADDITION</option>
+                    <option value="-">SUBTRACTION</option>
+                    <option value="*">MULTIPLICATION</option>
+                    <option value="/">DIVISION</option>
+                </select><br><br>
+                <button type="submit">result</button><br><br><br>
+                <label>result</label>
+                <input type="text" value="{{result}}">
+            </form>
+        </div>
+</body>
+</html>
+
+    
